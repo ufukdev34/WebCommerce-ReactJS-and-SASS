@@ -1,0 +1,20 @@
+button{
+    font-size:inherit;
+    border:0;
+    background-color: transparent;
+    cursor:pointer;
+}
+.label{
+    padding:0 .3em;
+    font-size: .8em;
+    color:$primary;
+    background-color: $primary;
+    color:#FFFFFF;
+    z-index:4;
+}
+.label--warn{
+    background-color: $warn !important;
+}
+.label--success{
+    background-color: $success !important;
+}

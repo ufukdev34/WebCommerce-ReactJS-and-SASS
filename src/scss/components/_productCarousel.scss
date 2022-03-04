@@ -1,0 +1,140 @@
+.productCarouselContainer{
+    width:100%;
+    font-size:calc(min(3.6vw,1em));
+    @include Tablet{
+        width:100%;
+    }
+    max-width:65em;
+    overflow-x: auto;
+    &::-webkit-scrollbar{
+        display:none;
+    }
+    padding: 0 4vw;
+    background-color: red;
+}
+.productCarousel__title{
+    font-size:1.6em;
+    margin-bottom:.5em;
+}
+.productCarousel__wrapper{
+    height:100%;
+    width:100%;
+    padding:0 1.4em;
+    @include Tablet{
+        padding:0 6.5vw;
+    }
+    flex-wrap: wrap;
+}
+.productCarousel{
+    width:100%;
+    height:100%;
+    
+    &__item{
+        text-align: center;
+        width:10.5em !important;
+        min-width:10.5em !important;
+        height:19em;
+        border:1px solid $borderColor;
+        border-radius: 2px;
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        z-index:2;
+        &__image{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            height:60%;
+            padding:0 .5em;
+            padding-bottom:0;
+            position:relative;
+            .item__image{
+                width:100%;
+                height:100%;
+                object-fit: contain;
+            }
+        }
+        &__description{
+            height:40%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding:0 .6em;
+            border-top:1px solid #eee;
+        }
+        &__title{
+            font-weight: 400;
+            font-size: 1.03em;
+            width:100%;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow: ellipsis !important;
+        }
+        &__text{
+            display:flex;
+            text-align: center;
+            font-size:1em;
+            color:#141414;
+            font-weight: 300;
+            flex-wrap: wrap;
+            .priceBeforeText{
+                text-decoration: line-through;
+                text-decoration-color: $warn;
+                color:#707070;
+                font-size:.75em;
+            }
+        }
+        &__buttons{
+            display:flex;
+            justify-content: center;
+            width:100%;
+            margin-top:.5em;
+            font-size: .85em;
+        }
+        &__labels{
+            position:absolute;
+            top:0em;
+            right:0em;
+            display:flex;
+            justify-content: flex-end;
+            width:100%;
+            z-index:4;
+            padding:.3em;
+        }
+        .soldOutText{
+            position:absolute;
+            width:100%;
+            bottom:0;
+            background-color:$warn;
+            color:#FFF;
+            z-index:3;
+        }
+    }
+    .slick-prev::before {
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+    }
+    .slick-next::before {
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+
+    }
+}
+.slick-slide{
+    padding:0 .3em;
+}
+.slick-prev::before {
+    color: $primary !important;
+}
+.slick-next::before {
+    color: $primary !important;
+}
+.slick-track{
+    display: flex !important;
+}

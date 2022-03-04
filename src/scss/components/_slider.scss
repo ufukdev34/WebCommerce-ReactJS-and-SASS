@@ -1,0 +1,79 @@
+.slider{
+    width:100%;
+    max-width:100%;
+    height:20em;
+    @include Mobile{
+        max-height: 18em;
+    }
+    overflow: hidden;
+    position:relative;
+    .slick-prev::before,.slick-next::before {
+        position:absolute !important;
+        color:$secondary !important;
+        top:0;
+        bottom:0;
+        right:0;
+        margin:0;
+    }
+    .slick-prev,.slick-next{
+        z-index: 6;
+    }
+    .slick-prev::before {
+        transform:translateX(170%);
+        
+    }
+    .slick-next::before {
+        transform:translateX(-170%);
+        
+    }
+    .slick-slide{
+        max-width: 100% !important;
+        padding:0 !important;
+        margin:0 !important;
+        position:relative;
+    }
+
+    >div{
+        width:100%;
+        height:100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color:lighten($secondary,40%);
+
+        display:flex;
+        align-items: center;
+        font-size:calc(min(1.25em,3.5vw));
+        .slideContent{
+            display:flex;
+            flex-direction: column;
+            gap:1em;
+            line-height: 2.25em;
+            max-width: 30em;
+            padding:0 2.5em;
+            h1{
+                font-size:2.25em;
+            }
+            h3{
+                font-weight: 300;
+                color:#303030;
+                font-size:1.25em;
+            }
+            button{
+                padding:.6em 1.25em;
+                font-size:.9em;
+                font-family:inherit !important;
+                border-radius: 2px;
+                border:1px solid $primary;
+                align-self: flex-start;
+                background-color: $primary;
+                transition: .2s ease-in-out;
+                &:hover{
+                    background-color: lighten($primary,5%);
+                }
+            }
+        }
+    }
+    
+
+}

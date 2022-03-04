@@ -1,0 +1,287 @@
+{
+    "categories" : [
+        {
+            "categoryID":1,
+            "categoryTitle":"categoryTitle1",
+            "categoryOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue21","optionValue22"
+                    ]
+                }
+            ]
+        },
+        {
+            "categoryID":2,
+            "categoryTitle":"categoryTitle2"
+        },
+        {
+            "categoryID":3,
+            "categoryTitle":"categoryTitle3"
+        },
+        {
+            "categoryID":4,
+            "categoryTitle":"categoryTitle4"
+        },
+        {
+            "categoryID":5,
+            "categoryTitle":"categoryTitle5"
+        },
+        {
+            "categoryID":6,
+            "categoryTitle":"categoryTitle6"
+        }
+    ],
+
+    "products" : [
+        {
+            "productID":1,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1",
+            "productDescription":"Description Text",
+            "productPrice":1250,
+            "productPriceBeforeDiscount":1580,
+            "productImages":{
+                "primaryImage":"../assets/images/products/iphone.png",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                }
+            ]
+        },
+        {
+            "productID":2,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1(2)",
+            "productDescription":"Description Text",
+            "productPrice":1752,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                
+            ],
+            "productOptions":[
+                
+            ]
+        },
+        {
+            "productID":3,
+            "productCategoryID":2,
+            "productCategoryTitle":"categoryTitle2",
+            "productTitle":"Product Category 2",
+            "productDescription":"Description Text",
+            "productPrice":1325,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                },
+                {
+                    "featureID":2,
+                    "featureTitle":"Feature 2",
+                    "featureContent":"Feature Content 2"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                },
+                {
+                    "optionID":2,
+                    "optionTitle":"Option Title 2",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                }
+            ]
+        },
+        {
+            "productID":5,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1(3)",
+            "productDescription":"Description Text",
+            "productPrice":1752,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                },
+                {
+                    "featureID":2,
+                    "featureTitle":"Feature 2",
+                    "featureContent":"Feature Content 2"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                },
+                {
+                    "optionID":2,
+                    "optionTitle":"Option Title 2",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                }
+            ]
+        },
+        {
+            "productID":6,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1(4)",
+            "productDescription":"Description Text",
+            "productPrice":1752,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                },
+                {
+                    "featureID":2,
+                    "featureTitle":"Feature 2",
+                    "featureContent":"Feature Content 2"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                },
+                {
+                    "optionID":2,
+                    "optionTitle":"Option Title 2",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                }
+            ]
+        },
+        {
+            "productID":7,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1(5)",
+            "productDescription":"Description Text",
+            "productPrice":1752,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                },
+                {
+                    "featureID":2,
+                    "featureTitle":"Feature 2",
+                    "featureContent":"Feature Content 2"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1-1","optionValue1-2"
+                    ]
+                },
+                {
+                    "optionID":2,
+                    "optionTitle":"Option Title 2",
+                    "optionValues":[
+                        "optionValue2-1","optionValue2-2"
+                    ]
+                }
+            ]
+        },
+        {
+            "productID":8,
+            "productCategoryID":1,
+            "productCategoryTitle":"categoryTitle1",
+            "productTitle":"Product Category 1(6)",
+            "productDescription":"Description Text",
+            "productPrice":1752,
+            "productImages":{
+                "primaryImage":"url",
+                "otherImages":["url","url","url"]
+            },
+            "productFeatures":[
+                {
+                    "featureID":1,
+                    "featureTitle":"Feature 1",
+                    "featureContent":"Feature Content 1"
+                },
+                {
+                    "featureID":2,
+                    "featureTitle":"Feature 2",
+                    "featureContent":"Feature Content 2"
+                }
+            ],
+            "productOptions":[
+                {
+                    "optionID":1,
+                    "optionTitle":"Option Title 1",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                },
+                {
+                    "optionID":2,
+                    "optionTitle":"Option Title 2",
+                    "optionValues":[
+                        "optionValue1","optionValue2"
+                    ]
+                }
+            ]
+        }
+    ]
+}

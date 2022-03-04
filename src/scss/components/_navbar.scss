@@ -1,0 +1,348 @@
+.navbar{
+    position: fixed;
+    top:0;
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    z-index: 99;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.navbar__upper,.navbar__lower,.navbar__middle{
+    width: 100%;
+    display:flex;
+    align-items: stretch;
+}
+.navbar__upper{
+    height:2.5em;
+    background-color: $base;
+}
+.navbar__middle{
+    min-height: 4.5em;
+    background-color: $secondary;
+    color:$plane;
+    z-index:99;
+    .container{
+        gap:1em;
+    }
+    .logo{
+        font-size:1.25em;
+        span{
+            color:$primary;
+        }
+    }
+    &__right{
+        display:flex;
+        align-items: center;
+        gap:.6em;
+    }
+    &__left__wrapper{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap:1em;
+    }
+    @include Tablet{
+        .searchBox{
+            display: none;
+        }
+    }
+}
+.navbar__lower{
+    height: 3.5em;
+    background-color: $secondary--light;
+    .searchBox{
+        height: 100%;
+        padding: .5em 0;
+        max-width: 20em;
+        display: none;
+        @include Tablet{
+            display: flex;
+        }
+    }
+    
+    .container{
+        display:flex;
+        position: relative;
+        gap:1em;
+        padding:0;
+        ul{
+            display: flex;
+            color:$plane;
+            font-size: .9em;
+            align-items: center;
+            width:100%;
+            height: 100%;
+            @include Tablet{
+                justify-content: space-between !important;
+                gap:0;
+                display: none;
+            }
+            gap:1em;
+            a,li{
+                text-align: center;
+                height:100%;
+                overflow-wrap: break-word;
+                
+                display:flex;
+                align-items: center;
+                gap:.4em;
+                &:hover{
+                    color:$primary;
+                }
+            }
+            .moreItem{
+                cursor: pointer;
+            }
+            .moreCategoriesDropdown{
+                position: absolute;
+                bottom:0;
+                display:none;
+                transform: translateY(100%);
+                border-top:2px solid $primary;
+                width:10em;
+                height:auto;
+                display:flex;
+                flex-direction: column;
+                gap:0;
+                a{
+                    width:100%;
+                    padding:.5em .8em;
+                    
+                    background-color: $secondary--light;
+                    &:not(:last-child){
+                        border-bottom:1px solid $secondary--dark;
+                    }
+                    text-align: left;
+                    overflow-wrap: break-word;
+                }
+            }
+            .active{
+                animation: animDropdownActive .2s forwards;
+            }
+            .deactive{
+                animation: animDropdownDeactive .2s forwards;
+            }
+            @keyframes animDropdownActive{
+                from{
+                    opacity:0;
+                }
+                to{
+                    opacity:1;
+                }
+            }
+            @keyframes animDropdownDeactive{
+                from{
+                    opacity:1;
+                }
+                to{
+                    opacity:0;
+                }
+            }
+        }
+    }
+}
+.searchBox{
+    display:flex;
+    width:100%;
+    max-width: 38em;
+    height:50%;
+    
+    @include Tablet{
+        height:90% !important;
+        padding:.2em 0;
+        max-width: 60vw !important;
+    }
+    input[type=search]{
+        width:100%;
+        height:100%;
+        font-size: inherit;
+        font-family: inherit;
+        border:none;
+        border-radius:2px 0px 0px 2px;
+        padding:0 .6em;
+        outline:none;
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration { display: none; }
+    }
+    .searchButton{
+
+        border-radius:0px 2px 2px 0px;
+        right:0;
+        top:0;
+        bottom:0;
+        padding:0 .8em;
+        color:$secondary;
+        background-color: $plane;
+        border:0;
+        transition: .2s ease-in-out;
+        &:hover{
+            background-color: $primary;
+            border-color: $primary;
+        }
+    }
+}
+
+.cartIcon{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:2.5em;
+    height:2.5em;
+    border-radius: 100%;
+    border:2px solid $primary;
+    color:$primary;
+    position:relative;
+    margin-right:.4em;
+    transition: .2s ease-in-out;
+    .icon{
+        margin-left:-2px;
+    }
+    &:hover{
+        background-color: $primary;
+        color:$secondary;
+    }
+    .cartCounterText{
+        position: absolute;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-size:.8em;
+        width:1.8em;
+        height:1.8em;
+        border-radius: 100%;
+        transform: translate(70%,-70%);
+        background-color: $primary;
+        color:$secondary;
+        
+    }
+}
+.responsiveMenuIcon{
+    display:none;
+    cursor: pointer;
+    @include Tablet{
+        display: flex;
+    }
+    gap:.5em;
+    color:$plane;
+    align-items: center;
+}
+
+.responsiveMenuOverlay{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background-color: #00000098;
+    z-index: 999;
+    top:0;
+    opacity:0;
+    display:none;
+    color:$black;
+}
+.responsiveMenuActive{
+    animation: animMenuActive .2s ease-in-out forwards;
+}
+.responsiveMenuDeactive{
+    animation: animMenuDeactive .2s ease-in-out forwards;
+}
+.responsiveMenuOverlayActive{
+    animation: animMenuOverlayActive .2s ease-in-out forwards;
+}
+.responsiveMenuOverlayDeactive{
+    animation: animMenuOverlayDeactive .2s ease-in-out forwards;
+}
+@keyframes animMenuActive{
+    from{
+        right:-100em;
+    }
+    to{
+        right:0;
+    }
+}
+@keyframes animMenuDeactive{
+    from{
+        right:0;
+    }
+    to{
+        right:-100em;
+    }
+}
+@keyframes animMenuOverlayActive{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@keyframes animMenuOverlayDeactive{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+    }
+}
+.responsiveMenu{
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color: $plane;
+    width:72vw;
+    max-width: 18em;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size:1.1em;
+    &__title{
+        font-weight: 500;
+        padding:1rem;
+        border-bottom:1px solid $borderColor;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        .icon{
+            cursor:pointer;
+        }
+    }
+    &__content{
+        width:100%;
+        height:auto;
+        overflow-y: auto;
+        ul{
+            width:100%;
+            height:auto;
+            li{
+                width:100%;
+                padding:.8rem 2.25rem;
+                border-bottom:1px solid $borderColor;
+                font-size:.8em;
+                transition: .2s ease-in-out;
+                overflow-wrap: break-word;
+                text-align: left;
+                border-left:0px solid $primary;
+                &:hover{
+                    border-left:4px solid $primary;
+                }
+            }
+        }
+        p{
+            padding:1em 1.15rem;
+            font-size:.8em;
+            font-weight: 500;
+            color:darken($base,45%);
+            border-bottom:1px solid $borderColor;
+            background-color: lighten($base,2%);
+        }
+    }
+}
+.removeScrollbar{
+    overflow:hidden;
+}

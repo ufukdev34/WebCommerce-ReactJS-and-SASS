@@ -1,0 +1,370 @@
+.cartPage__wrapper{
+    overflow:hidden;
+}
+.cartPage__wrapper > .container{
+    margin-top:1.25em;
+    margin-bottom:1.25em;
+    p{
+        font-size:1.25em;
+        font-weight: 500;
+    }
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        color:$warn;
+        border:1px solid $warn;
+        font-size: .85em;
+        border-radius: 2px;
+        font-family: inherit !important;
+        @include Tablet{
+            font-size:.75em
+        }
+        padding:.5em 1em;
+        transition:.2s ease-in-out;
+        &:hover{
+            background-color: $warn;
+            color:$plane;
+        }
+    }
+}
+.cart{
+    display:flex;
+    justify-content: space-between;
+    gap:5em;
+    @include Tablet{
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:1em;
+    }
+}
+.cartPage__content{
+    background-color: $base;
+    padding:1.3em 0;
+    @include Tablet{
+        padding-top:0;
+    }
+    .container{
+        .cart table{
+            width:100%;
+            max-width: 65em;
+            @include Tablet{
+                max-width: 100%;
+                font-size:calc(min(2.5vw,1em)) !important;
+            }
+            @media(max-width:978px){
+                font-size: 1.6vw;
+            }
+            border:1px solid $borderColor;
+            border-radius: 2px;
+            padding:0 .5em;
+            border-collapse: separate;
+            border-spacing:.5em;
+            td:last-child{
+                width:1em !important;
+                text-align: center;
+            }
+            td{
+                min-width: 8em;
+                @include Tablet{
+                    min-width: unset !important;
+                }
+            }
+            .removeFromCartButton{
+                width:100%;
+                font-size: .85em;
+                border:1px solid $primary;
+                border-radius: 2px;
+                padding:.6em .8em;
+                font-family: inherit !important;
+                font-weight:500;
+                transition: .2s ease-in-out;
+                background-color: darken($base,15%);
+                color:darken($base,50%);
+                border-color:$base;
+                &:hover{
+                    background-color:darken($base,12%);
+                }
+            }
+            th{
+                text-align: center;
+                font-size:1em;
+                font-weight: 500;
+                color:darken($base,35%);
+                padding-top:.5em;
+            }
+            th:first-child{
+                text-align:left !important;
+            }
+            /* th:not(:first-child){
+                padding-left:.25em;
+            } */
+            .productTH{
+                width:25em;
+            }
+            
+            /* .buttonsTH{
+                width:1em;
+            } */
+            td:not(:first-child){
+                padding:0 .25em;
+            }
+            td{
+                vertical-align: middle;
+                padding:.5em 0;
+            }
+            td:nth-child(3){
+                word-wrap: break-word;
+            }
+            tr:not(:first-child){
+                padding-bottom: 1em;
+            }
+            tr{
+                height: min-content !important;
+                text-align: center;
+            }
+            tr td:first-child{
+                display:flex;
+                gap:.5em;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                
+                @media(max-width:1220px){
+                    justify-content: center;
+                }
+                @include Tablet{
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
+                    text-align: left !important;
+                }
+                min-height:6em;
+                .productCartImage{
+                    width:6em;
+                    height:6em;
+                    min-width:6em;
+                    min-height:6em;
+                    background: darken($base,5%);
+                    border-radius: 2px;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding:.5em;
+                    overflow: hidden;
+                    img{
+                        width:100%;
+                        height:100%;
+                        object-fit: contain;
+                        object-position: center;
+                        image-rendering: -moz-crisp-edges;       
+                        image-rendering:   -o-crisp-edges;         
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges;
+                        -ms-interpolation-mode: nearest-neighbor;
+                    }
+                }
+                .productCartDetails{
+                    padding-top:.5em;
+                    @media(min-width:1220px){
+                        padding-left:.5em;
+                    }
+                    >p{
+                        color:$secondary;
+                        font-weight: 500;
+                        max-width: 11em;
+                        @include Mobile{
+                            max-width: 8em;
+                        }
+                        
+                        word-wrap: break-word;
+                    }
+                    >ul{
+                        color:darken($base,50%);
+                        font-size: .85em;
+                        display:flex;
+                        flex-direction: column;
+                        @media(max-width:1220px){
+                            align-items: center;
+                        }
+                        @include Tablet{
+                            align-items: flex-start;
+                        }
+                        line-height: 1.25em;
+                        margin-top:.5em;
+                        gap:.25em;
+                        li{
+                            display:flex;
+                            align-items: center;
+                            max-width:12em;
+
+                            word-break: break-all;
+                            >p{
+                                font-weight: 500;
+                                margin-right: .25em;
+                            }
+                            span{
+                                font-size: .9em;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .quantityTD{
+                display:flex;
+                gap:.5em;
+                align-items: center;
+                justify-content: center;
+                @include Mobile{
+                    font-size:1.2em;
+                }
+                span{
+                    min-width:1.6em;
+                    display:flex;
+                    justify-content: center;
+                    word-break: break-all;
+                }
+                button{
+                    width:1.5em;
+                    height:1.5em;
+                    padding-top:.05em;
+                    @media(min-width:768px){
+                        width:1.25em;
+                        height: 1.25em;
+                    }
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    border:1px solid $borderColor;
+                    background-color: $plane;
+                    transition: .2s ease-in-out;
+                    border-radius: 2px;
+                    &:hover{
+                        border-color: $primary;
+                    }
+                    font-family: inherit;
+                    font-size:1.4em;
+                }
+            }
+        }
+        .cartPage__paymentDescription{
+            width:30em;
+            // font-size:calc(min(1.5vw,1em));
+            font-size:clamp(.9em,2vw,1em);
+            @include Tablet{
+                width:100%;
+                font-size:1em;
+            }
+            max-width: 100%;
+            min-height: 5em;
+            .cartPage__couponPart{
+                border:1px solid $borderColor;
+                border-radius: 2px;
+                padding:1em;
+                margin-bottom: 1em;
+                p{
+                    margin-bottom: .25em;
+                }
+                &__inputWrapper{
+                    display:flex;
+                    align-items: center;
+                    height:2.5em;
+                    position:relative;
+                    input{
+                        width:100%;
+                        position: absolute;
+                        left:0;
+                        top:0;
+                        bottom: 0;
+                        outline:none;
+                        
+                        border:1px solid $borderColor;
+                        padding-left:1em;
+                        padding-right:7em;
+                        border-radius:2px;
+                        font-family: inherit !important;
+                        color:$black;
+                    }
+                    button{
+                        position:absolute;
+                        right:0;
+                        top:0;
+                        bottom:0;
+                        width:6em;
+                        
+                        font-size: .8em;
+                        border:1px solid $secondary;
+                        border-top-right-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        padding:.6em .8em;
+                        font-family: inherit !important;
+                        transition: .2s ease-in-out;
+                        background-color: $secondary;
+                        color:$plane;
+                        &:hover{
+                            background-color: lighten($secondary,5%);
+                        }
+                    }
+                }
+            }
+            &__content{
+                border:1px solid $borderColor;
+                border-radius: 2px;
+                padding:1em;
+                margin-bottom:1em;
+                ul{
+                    width:100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap:.5em;
+                    li{
+                        width:100%;
+                        display:flex;
+                        justify-content: space-between;
+                    }
+                    li:nth-child(2){
+                        opacity:.6;
+                    }
+                }
+            }
+            &__buttons{
+                width:100%;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                gap:1em;
+                button{
+                    flex:1;
+                    .icon{
+                        padding-top:.1em;
+                    }
+                    font-size:.9em;
+                    min-height:3em;
+                    padding:0 1em;
+                    border-radius: 2px;
+                    font-family: inherit !important;
+                    transition: .2s ease-in-out;
+                    font-weight:500;
+                    &:first-child{
+                        background-color: $plane;
+                        border:1px solid $borderColor;
+                        color:$black;
+                        &:hover{
+                            background-color: $base;
+                        }
+                    }
+                    &:nth-child(2){
+                        border:1px solid $primary;
+                        
+                        background-color: $primary;
+                        color:$secondary;
+                        &:hover{
+                            background-color: lighten($primary,5%);
+                            color:$secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

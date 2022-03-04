@@ -1,0 +1,162 @@
+.productsGrid{
+    width:100%;
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    background-color: $plane;
+    margin-top:0em;
+    border:1px solid $borderColor;
+    border-radius: 2px;
+    margin-bottom: 2em;
+    font-size:calc(min(1em,3.6vw));
+    &__title{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        border-bottom:1px solid $borderColor;
+        color:$secondary;
+        flex-wrap: wrap;
+        .container{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h3{
+            font-size:1.25em;
+            font-weight: 500;
+            padding:1.75rem 0;
+            margin-bottom: -2px;
+        }
+    }
+    select{
+        margin:1.25rem 0;
+        padding:.6em;
+        font-family: inherit !important;
+        font-weight: 500;
+        border-radius: 4px;
+        background-color: transparent;
+        border-width: 2px;
+        border-color: $primary;
+        outline:none;
+        color:$secondary;
+    }
+    &__content{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,11em);
+        width:92vw;
+        margin:1em auto;
+        gap:1em;
+        @include Mobile{
+            grid-template-columns: repeat(2,10em);
+            justify-content: center;
+        } 
+        @include SmallMobile{
+            grid-template-columns: 10em;
+        }
+    }
+    &__item{
+        height:min-content;
+        display:flex;
+        flex-direction: column;
+        cursor:pointer;
+        transition:.2s ease-in-out;
+        background-color: $plane;
+        &__image{
+            width:100%;
+            height: 9em;
+            padding:.7em;
+            background: darken($base,5%);
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            overflow:hidden;
+            img{
+                width:100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                image-rendering: -moz-crisp-edges;       
+                image-rendering:   -o-crisp-edges;         
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+                -ms-interpolation-mode: nearest-neighbor;
+            }
+        }
+        &__content{
+            height:auto;
+            padding-top: .5em;
+            display:flex;
+            flex-direction: column;
+            letter-spacing: -.2px;
+            a{
+                cursor:unset;
+                height:auto;
+                display:flex;
+                align-items: center;
+            }
+            a p{
+                font-weight: 500;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color:$secondary;
+                
+                width:auto;
+                max-width: 100%;
+                height:100%;
+                cursor:pointer;
+                transition: .2s ease-in-out;
+                &:hover{
+                    color:lighten($secondary,15%)
+                }
+            }
+            small{
+                font-weight: 400;
+                color:darken($base,50%);
+                
+                width:100%;
+                height:auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &__price{
+                display:flex;
+                align-items: center;
+                height:auto;
+                gap:.3em;
+                overflow: hidden;
+                .oldPrice{
+                    text-decoration: line-through;
+                    color:darken($base,40%);
+                    font-weight: 300;
+                }
+            }
+            button{
+                font-size: .8em;
+                margin-top:.5em;
+                border:1px solid $primary;
+                border-radius: 2px;
+                padding:.6em .8em;
+                font-family: inherit !important;
+                font-weight:500;
+                transition: .2s ease-in-out;
+                background-color: $primary;
+                color:$secondary;
+                &:hover{
+                    background-color: lighten($primary,5%);
+                    color:$secondary;
+                }
+                &:disabled{
+                    background-color: darken($base,20%);
+                    color:darken($base,60%);
+                    border-color:darken($base,20%);
+                    &:hover{
+                        background-color:darken($base,18%);
+                        color:darken($base,60%);
+                    }
+                }
+            }
+        }
+    }
+}
